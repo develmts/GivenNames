@@ -1,0 +1,23 @@
+https://en.wikipedia.org/wiki/List_of_feminine_given_names
+https://es.wikipedia.org/wiki/Categor%C3%ADa:Nombres_femeninos
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_f%C3%A9minin
+https://it.wikipedia.org/wiki/Categoria:Prenomi_femminili
+https://de.wikipedia.org/wiki/Kategorie:Weiblicher_Vorname
+https://pt.wikipedia.org/wiki/Categoria:Prenomes_femininos
+https://sv.wikipedia.org/wiki/Kategori:Kvinnonamn
+https://pl.wikipedia.org/wiki/Kategoria:Imiona_%C5%BCe%C5%84skie
+https://tr.wikipedia.org/wiki/Kategori:K%C4%B1z_adlar%C4%B1
+# CATALÀ
+https://www.idescat.cat/nadons/
+https://ca.wiktionary.org/wiki/Categoria:Prenoms_femenins_en_catal%C3%A0
+https://ca.wikipedia.org/wiki/Categoria:Prenoms
+
+# GALEGO
+https://www.ige.gal/igebdt/esq.jsp?idioma=gl&ruta=onomast/nomdecadas.jsp
+https://www.ige.gal/igebdt/onomast/nomconc.jsp?idioma=gl
+https://gl.wikipedia.org/wiki/Lista_de_nomes_femininos_en_galego
+https://gl.wikipedia.org/wiki/Categor%C3%ADa:Nomes_femininos
+
+# EUSKARA
+https://www.euskaltzaindia.eus/es/component/eoda/?Itemid=469&sexua=E&view=izenak
+https://eu.wiktionary.org/wiki/Kategoria:Emakume_izenak_euskaraz

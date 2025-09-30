@@ -1,0 +1,12 @@
+
+# locale: ca-es
+https://ca.wiktionary.org/wiki/Categoria:Prenoms_femenins_en_catal%C3%A0
+https://ca.wiktionary.org/wiki/Categoria:Prenoms_masculins_en_catal%C3%A0
+
+# locale: fr-fr
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_f%C3%A9minin
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_masculin
+
+# locale: it-it
+https://it.wikipedia.org/wiki/Categoria:Prenomi_italiani_femminili
+https://it.wikipedia.org/wiki/Categoria:Prenomi_italiani_maschili

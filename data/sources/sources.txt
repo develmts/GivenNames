@@ -1,0 +1,116 @@
+# FRances
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_f%C3%A9minin
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_masculin
+
+# ITALIÀ
+https://it.wikipedia.org/wiki/Categoria:Prenomi_femminili
+https://it.wikipedia.org/wiki/Categoria:Prenomi_maschili
+
+# ALEMANY
+https://de.wikipedia.org/wiki/Kategorie:Weiblicher_Vorname
+https://de.wikipedia.org/wiki/Kategorie:M%C3%A4nnlicher_Vorname
+
+# PORTUGUES
+https://pt.wikipedia.org/wiki/Categoria:Prenomes_femininos
+https://pt.wikipedia.org/wiki/Categoria:Prenomes_masculinos
+
+https://sv.wikipedia.org/wiki/Kategori:Kvinnonamn
+https://sv.wikipedia.org/wiki/Kategori:Mansnamn
+
+# POLONES
+https://pl.wikipedia.org/wiki/Kategoria:Imiona_%C5%BCe%C5%84skie
+https://pl.wikipedia.org/wiki/Kategoria:Imiona_m%C4%99skie
+
+# TURKISH
+https://tr.wikipedia.org/wiki/Kategori:K%C4%B1z_adlar%C4%B1
+https://tr.wikipedia.org/wiki/Kategori:Erkek_isimleri
+
+# CATALÀ
+https://www.idescat.cat/nadons/
+https://ca.wiktionary.org/wiki/Categoria:Prenoms_femenins_en_catal%C3%A0
+https://ca.wiktionary.org/wiki/Categoria:Prenoms_masculins_en_catal%C3%A0
+https://ca.wikipedia.org/wiki/Categoria:Prenoms
+
+# GALEGO
+https://www.ige.gal/igebdt/esq.jsp?idioma=gl&ruta=onomast/nomdecadas.jsp
+https://www.ige.gal/igebdt/onomast/nomconc.jsp?idioma=gl
+https://gl.wikipedia.org/wiki/Lista_de_nomes_femininos_en_galego
+https://gl.wikipedia.org/wiki/Lista_de_nomes_masculinos_en_galego
+https://gl.wikipedia.org/wiki/Categor%C3%ADa:Nomes_femininos
+https://gl.wikipedia.org/wiki/Categor%C3%ADa:Nomes_masculinos
+
+# EUSKARA
+https://www.euskaltzaindia.eus/es/component/eoda/?Itemid=469&sexua=E&view=izenak
+https://www.euskaltzaindia.eus/es/component/eoda/?Itemid=469&sexua=G&view=izenak
+https://eu.wiktionary.org/wiki/Kategoria:Emakume_izenak_euskaraz
+https://eu.wiktionary.org/wiki/Kategoria:Gizon_izenak_euskaraz
+
+# ENGLISH
+https://en.wikipedia.org/wiki/Category:English_feminine_given_names
+https://en.wikipedia.org/wiki/Category:English_masculine_given_names
+https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/babynamesenglandandwalesbabynamesstatisticsgirls
+https://www.ssa.gov/oact/babynames/
+
+# FINNISH
+https://fi.wiktionary.org/wiki/Luokka:Suomen_kieliset_naisennimet
+https://fi.wiktionary.org/wiki/Luokka:Suomen_kieliset_miesennimet
+https://verkkopalvelu.vrk.fi/nimipalvelu
+
+# HUNGARIAN
+https://hu.wikipedia.org/wiki/Kateg%C3%B3ria:Magyar_n%C5%91i_keresztnevek
+https://hu.wikipedia.org/wiki/Kateg%C3%B3ria:Magyar_f%C3%A9rfi_keresztnevek
+https://www.magyarnevek.hu/
+
+# RUSSIAN
+https://ru.wikipedia.org/wiki/Категория:Женские_имена
+https://ru.wikipedia.org/wiki/Категория:Мужские_имена
+
+# JAPANESE
+https://ja.wikipedia.org/wiki/Category:日本語の女性名
+https://ja.wikipedia.org/wiki/Category:日本語の男性名
+
+# CHINESE
+https://zh.wikipedia.org/wiki/Category:中文女性名
+https://zh.wikipedia.org/wiki/Category:中文男性名
+
+# INDIAN
+https://en.wikipedia.org/wiki/Category:Hindu_given_names
+https://en.wikipedia.org/wiki/Category:Sikh_given_names
+https://en.wikipedia.org/wiki/Category:Muslim_given_names
+
+# NORDIC
+https://sv.wikipedia.org/wiki/Kategori:Kvinnonamn
+https://sv.wikipedia.org/wiki/Kategori:Mansnamn
+https://www.scb.se/hitta-statistik/sverige-i-siffror/namnsok/
+https://www.ssb.no/navn
+https://www.dst.dk/da/Statistik/emner/befolkning-og-valg/navne
+
+# AFRICA (indigenous, non-colonial)
+https://en.wikipedia.org/wiki/Category:Yoruba_given_names
+https://en.wikipedia.org/wiki/Category:Igbo_given_names
+https://en.wikipedia.org/wiki/Category:Swahili_given_names
+https://en.wikipedia.org/wiki/Category:Amharic_given_names
+https://en.wikipedia.org/wiki/Category:Zulu_given_names
+https://en.wikipedia.org/wiki/Category:Xhosa_given_names
+https://en.wikipedia.org/wiki/Category:Shona_given_names
+
+
+# ARABIC
+https://en.wikipedia.org/wiki/Category:Arabic_feminine_given_names
+https://en.wikipedia.org/wiki/Category:Arabic_masculine_given_names
+https://ar.wikipedia.org/wiki/تصنيف:أسماء_إناث_عربية
+https://ar.wikipedia.org/wiki/تصنيف:أسماء_ذكور_عربية
+
+# BERBER / AMAZIGH
+https://en.wikipedia.org/wiki/Category:Berber_given_names
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_berb%C3%A8re
+
+
+
+# OCEANIA (indigenous)
+https://en.wikipedia.org/wiki/Category:Māori_given_names
+https://en.wikipedia.org/wiki/Category:Samoan_given_names
+https://en.wikipedia.org/wiki/Category:Tongan_given_names
+https://en.wikipedia.org/wiki/Category:Hawaiian_given_names
+https://en.wikipedia.org/wiki/Category:Fijian_given_names
+

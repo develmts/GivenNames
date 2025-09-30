@@ -1,0 +1,114 @@
+# EUROPE (examples already included earlier)
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_f%C3%A9minin
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_masculin
+https://it.wikipedia.org/wiki/Categoria:Prenomi_femminili
+https://it.wikipedia.org/wiki/Categoria:Prenomi_maschili
+https://de.wikipedia.org/wiki/Kategorie:Weiblicher_Vorname
+https://de.wikipedia.org/wiki/Kategorie:M%C3%A4nnlicher_Vorname
+https://pt.wikipedia.org/wiki/Categoria:Prenomes_femininos
+https://pt.wikipedia.org/wiki/Categoria:Prenomes_masculinos
+https://sv.wikipedia.org/wiki/Kategori:Kvinnonamn
+https://sv.wikipedia.org/wiki/Kategori:Mansnamn
+https://pl.wikipedia.org/wiki/Kategoria:Imiona_%C5%BCe%C5%84skie
+https://pl.wikipedia.org/wiki/Kategoria:Imiona_m%C4%99skie
+https://tr.wikipedia.org/wiki/Kategori:K%C4%B1z_adlar%C4%B1
+https://tr.wikipedia.org/wiki/Kategori:Erkek_isimleri
+
+# CATALÀ
+https://ca.wiktionary.org/wiki/Categoria:Prenoms_femenins_en_catal%C3%A0
+https://ca.wiktionary.org/wiki/Categoria:Prenoms_masculins_en_catal%C3%A0
+https://ca.wikipedia.org/wiki/Categoria:Prenoms
+
+# GALEGO
+https://gl.wikipedia.org/wiki/Lista_de_nomes_femininos_en_galego
+https://gl.wikipedia.org/wiki/Lista_de_nomes_masculinos_en_galego
+https://gl.wikipedia.org/wiki/Categor%C3%ADa:Nomes_femininos
+https://gl.wikipedia.org/wiki/Categor%C3%ADa:Nomes_masculinos
+
+# EUSKARA
+https://eu.wiktionary.org/wiki/Kategoria:Emakume_izenak_euskaraz
+https://eu.wiktionary.org/wiki/Kategoria:Gizon_izenak_euskaraz
+
+# ENGLISH
+https://en.wikipedia.org/wiki/Category:English_feminine_given_names
+https://en.wikipedia.org/wiki/Category:English_masculine_given_names
+
+# RUSSIAN
+https://ru.wikipedia.org/wiki/Категория:Женские_имена
+https://ru.wikipedia.org/wiki/Категория:Мужские_имена
+
+# HUNGARIAN
+https://hu.wikipedia.org/wiki/Kateg%C3%B3ria:Magyar_n%C5%91i_keresztnevek
+https://hu.wikipedia.org/wiki/Kateg%C3%B3ria:Magyar_f%C3%A9rfi_keresztnevek
+
+# FINNISH
+https://fi.wiktionary.org/wiki/Luokka:Suomen_kieliset_naisennimet
+https://fi.wiktionary.org/wiki/Luokka:Suomen_kieliset_miesennimet
+
+# ASIA
+# JAPANESE
+https://ja.wikipedia.org/wiki/Category:日本語の女性名
+https://ja.wikipedia.org/wiki/Category:日本語の男性名
+# CHINESE
+https://zh.wikipedia.org/wiki/Category:中文女性名
+https://zh.wikipedia.org/wiki/Category:中文男性名
+# KOREAN
+https://ko.wikipedia.org/wiki/분류:한국어_여자_이름
+https://ko.wikipedia.org/wiki/분류:한국어_남자_이름
+# VIETNAMESE
+https://vi.wikipedia.org/wiki/Thể_loại:Tên_nữ
+https://vi.wikipedia.org/wiki/Thể_loại:Tên_nam
+# THAI
+https://th.wikipedia.org/wiki/หมวดหมู่:ชื่อหญิง
+https://th.wikipedia.org/wiki/หมวดหมู่:ชื่อชาย
+# KHMER (Cambodian)
+https://km.wikipedia.org/wiki/ចំណាត់ថ្នាក់ក្រុម:ឈ្មោះស្រី
+https://km.wikipedia.org/wiki/ចំណាត់ថ្នាក់ក្រុម:ឈ្មោះបុរស
+# PERSIAN
+https://en.wikipedia.org/wiki/Category:Persian_given_names
+https://fa.wikipedia.org/wiki/رده:نام‌های_ایرانی
+# HEBREW (modern, not biblical)
+https://en.wikipedia.org/wiki/Category:Hebrew_given_names
+# GEORGIAN
+https://en.wikipedia.org/wiki/Category:Georgian_given_names
+# ARMENIAN
+https://en.wikipedia.org/wiki/Category:Armenian_given_names
+
+# ARABIC
+https://en.wikipedia.org/wiki/Category:Arabic_feminine_given_names
+https://en.wikipedia.org/wiki/Category:Arabic_masculine_given_names
+
+# BERBER / AMAZIGH
+https://en.wikipedia.org/wiki/Category:Berber_given_names
+https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Pr%C3%A9nom_berb%C3%A8re
+
+# AFRICAN (indigenous)
+https://en.wikipedia.org/wiki/Category:Yoruba_given_names
+https://en.wikipedia.org/wiki/Category:Igbo_given_names
+https://en.wikipedia.org/wiki/Category:Swahili_given_names
+https://en.wikipedia.org/wiki/Category:Amharic_given_names
+https://en.wikipedia.org/wiki/Category:Zulu_given_names
+https://en.wikipedia.org/wiki/Category:Xhosa_given_names
+https://en.wikipedia.org/wiki/Category:Shona_given_names
+
+# OCEANIA
+https://en.wikipedia.org/wiki/Category:Māori_given_names
+https://en.wikipedia.org/wiki/Category:Samoan_given_names
+https://en.wikipedia.org/wiki/Category:Tongan_given_names
+https://en.wikipedia.org/wiki/Category:Hawaiian_given_names
+https://en.wikipedia.org/wiki/Category:Fijian_given_names
+https://en.wikipedia.org/wiki/Category:Tahitian_given_names
+https://en.wikipedia.org/wiki/Category:Marquesan_given_names
+https://en.wikipedia.org/wiki/Category:Rapa_Nui_given_names
+
+# AMERINDIAN / FIRST NATIONS
+https://en.wikipedia.org/wiki/Category:Native_American_given_names
+https://en.wikipedia.org/wiki/Category:Indigenous_Mexican_given_names
+https://en.wikipedia.org/wiki/Category:Quechua_given_names
+https://en.wikipedia.org/wiki/Category:Aymara_given_names
+https://en.wikipedia.org/wiki/Category:Guarani_given_names
+https://en.wikipedia.org/wiki/Category:Nahuatl_given_names
+https://en.wikipedia.org/wiki/Category:Maya_given_names
+https://en.wikipedia.org/wiki/Category:Inuit_given_names
+https://en.wikipedia.org/wiki/Category:Cree_given_names
+https://en.wikipedia.org/wiki/Category:Yupik_given_names
