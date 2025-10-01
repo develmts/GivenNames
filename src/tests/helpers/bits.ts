@@ -6,7 +6,7 @@ const cfg = ConfigManager.config(process.cwd())
 
 
 // beforeAll -> amb promise
-_beforeAll(() => {
+beforeAll(() => {
   // 1. Config inicial amb db.file temporal
   process.env.DB_FILE = ":memory:"
   const cfg = ConfigManager.config(process.cwd())
