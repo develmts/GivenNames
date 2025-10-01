@@ -1,57 +1,87 @@
-/* scripts/refactor-imports-v5.ts */
+/* scripts/refactor-imports-remove-v5.ts */
 import { Project, SyntaxKind } from "ts-morph";
 import path from "node:path";
 import fg from "fast-glob";
 import fs from "node:fs";
 
+/**
+ * Assumptions:
+ * - tsconfig.json has:
+ *     "baseUrl": "./src",
+ *     "paths": { "@/*": ["*"] }
+ * - We want to transform:
+ *   - "@/src/v5/..." -> "@/..."
+ *   - "@/src/..."    -> "@/..."
+ *   - any relative import resolving to <repo>/src/v5/... -> "@/<rest>"
+ *   - optionally, any relative import resolving to <repo>/src/...    -> "@/<rest>"
+ */
+
 const projectRoot = process.cwd();
 const SRC_DIR = path.join(projectRoot, "src");
 const V5_SEGMENT = `${path.sep}src${path.sep}v5${path.sep}`;
+const SRC_SEGMENT = `${path.sep}src${path.sep}`;
 
+// If absolute path points under src/*, return "@/<relToSrc>"
 function toAliasFromAbs(absPath: string): string | null {
-  // Convert an absolute path under src/* to @/src/*
   const relToSrc = path.relative(SRC_DIR, absPath);
   if (relToSrc.startsWith("..")) return null;
-  return `@/src/${relToSrc.replace(/\\/g, "/")}`;
+  return `@/${relToSrc.replace(/\\/g, "/")}`;
 }
 
+// Normalize a module specifier given the current file directory
 function normalizeSpecifier(spec: string, fileDir: string): string {
-  // Case A: Already using alias '@/src/v5/...'
+  // A) Already alias cases
   if (spec.startsWith("@/src/v5/")) {
-    return spec.replace("@/src/v5/", "@/src/");
+    return spec.replace("@/src/v5/", "@/");
+  }
+  if (spec.startsWith("@/src/")) {
+    return spec.replace("@/src/", "@/");
   }
 
-  // Case B: Any absolute-ish spec containing '/src/v5/...'
-  // Example: 'src/v5/utils/x' or '/abs/.../src/v5/utils/x' (rare in TS imports)
+  // B) Any spec containing "/src/v5/" or "\src\v5\"
   if (spec.includes("/src/v5/")) {
-    return spec.replace("/src/v5/", "/src/");
+    return spec.replace("/src/v5/", "/");
+  }
+  if (spec.includes("\\src\\v5\\")) {
+    return spec.replace("\\src\\v5\\", "\\");
   }
 
-  // Case C: Relative imports that might resolve to ...src/v5/...
+  // C) Relative imports: resolve and map to alias when they live under src/*
   if (spec.startsWith(".")) {
     const abs = path.resolve(fileDir, spec);
-    const withoutExt = abs; // keep original ext as in import
-    if (withoutExt.includes(V5_SEGMENT)) {
-      const newAbs = withoutExt.replace(V5_SEGMENT, `${path.sep}src${path.sep}`);
-      const alias = toAliasFromAbs(newAbs);
+    // Keep as-is if it doesn't sit under src
+    if (!abs.includes(SRC_SEGMENT)) return spec;
+
+    // If under src/v5 -> drop 'v5'
+    if (abs.includes(V5_SEGMENT)) {
+      const withoutV5 = abs.replace(V5_SEGMENT, SRC_SEGMENT);
+      const alias = toAliasFromAbs(withoutV5);
+      if (alias) return alias;
+      return spec;
+    }
+
+    // Optional: convert any path under src/* to alias "@/"
+    // Comment this block out if you only want to change v5 paths
+    {
+      const alias = toAliasFromAbs(abs);
       if (alias) return alias;
     }
-    // If it does not hit src/v5, leave it as is
+
     return spec;
   }
 
-  // Case D: Alias already '@/src/...' but no v5 -> leave intact
-  if (spec.startsWith("@/src/")) return spec;
+  // D) Other alias already "@/..." (no src) -> leave as-is
+  if (spec.startsWith("@/")) return spec;
 
-  // Case E: Anything else -> leave as is
+  // E) Anything else -> leave unchanged
   return spec;
 }
 
 async function main() {
-  // Collect TS/TSX files (you pots ampliar a JS/JSX si cal)
+  // Collect TS/TSX files (extend to js/jsx if needed)
   const files = await fg(
     ["src/**/*.ts", "src/**/*.tsx"],
-    { cwd: projectRoot, absolute: true, dot: false, ignore: ["**/node_modules/**", "**/dist/**"] }
+    { cwd: projectRoot, absolute: true, ignore: ["**/node_modules/**", "**/dist/**"] }
   );
 
   const project = new Project({
@@ -67,7 +97,7 @@ async function main() {
     const fileDir = path.dirname(sf.getFilePath());
     let fileChanged = false;
 
-    // import ... from "specifier"
+    // Static imports
     sf.getImportDeclarations().forEach((decl) => {
       const spec = decl.getModuleSpecifierValue();
       const next = normalizeSpecifier(spec, fileDir);
@@ -77,18 +107,20 @@ async function main() {
       }
     });
 
-    // dynamic import("specifier")
+    // Dynamic import("...")
     sf.forEachDescendant((node) => {
       if (node.getKind() === SyntaxKind.CallExpression) {
-        const call = node.asKind(SyntaxKind.CallExpression)!;
+        const call = node.asKindOrThrow(SyntaxKind.CallExpression);
         const expr = call.getExpression().getText();
         if (expr === "import" && call.getArguments().length === 1) {
           const arg = call.getArguments()[0];
           if (arg.getKind() === SyntaxKind.StringLiteral) {
-            const spec = (arg as any).getLiteralText();
+            // @ts-expect-error ts-morph private API shape
+            const spec: string = arg.getLiteralText();
             const next = normalizeSpecifier(spec, fileDir);
             if (next !== spec) {
-              (arg as any).setLiteralValue(next);
+              // @ts-expect-error ts-morph private API shape
+              arg.setLiteralValue(next);
               fileChanged = true;
             }
           }
@@ -103,28 +135,23 @@ async function main() {
     await project.save();
   }
 
-  // Optional: also fix CommonJS require("...") in .ts files (rare but possible)
-  // Simple text replacement bounded to require("...") strings only.
+  // Optional: fix CommonJS require("...") patterns in .ts (if any)
   for (const file of files) {
     const txt = fs.readFileSync(file, "utf8");
-    const updated = txt.replace(
+    let updated = txt;
+
+    // "@/src/v5/..." -> "@/..."
+    updated = updated.replace(
       /(require\(\s*['"])(@\/src\/v5\/)([^'"]+)(['"]\s*\))/g,
-      (_m, p1, _v5, rest, p4) => `${p1}@/src/${rest}${p4}`
-    ).replace(
-      // Relative require to src/v5 -> try to map to alias (best-effort for CommonJS)
-      /(require\(\s*['"])(\.[^'"]*?)(['"]\s*\))/g,
-      (m, p1, rel, p3) => {
-        try {
-          const abs = path.resolve(path.dirname(file), rel);
-          if (abs.includes(V5_SEGMENT)) {
-            const newAbs = abs.replace(V5_SEGMENT, `${path.sep}src${path.sep}`);
-            const alias = toAliasFromAbs(newAbs);
-            if (alias) return `${p1}${alias}${p3}`;
-          }
-        } catch { /* ignore */ }
-        return m;
-      }
+      (_m, p1, _v5, rest, p4) => `${p1}@/${rest}${p4}`
     );
+
+    // "@/src/..." -> "@/..."
+    updated = updated.replace(
+      /(require\(\s*['"])(@\/src\/)([^'"]+)(['"]\s*\))/g,
+      (_m, p1, _src, rest, p4) => `${p1}@/${rest}${p4}`
+    );
+
     if (updated !== txt) fs.writeFileSync(file, updated, "utf8");
   }
 
