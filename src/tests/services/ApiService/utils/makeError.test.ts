@@ -1,4 +1,4 @@
-import { makeError } from "../../../../services/ApiService/utils/httpErrors"
+import { makeError } from "@/services/ApiService/utils/httpErrors"
 
 
 function createMockContext() {

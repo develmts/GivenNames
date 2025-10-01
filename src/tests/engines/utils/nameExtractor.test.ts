@@ -1,5 +1,5 @@
 import { JSDOM } from "jsdom"
-import { isValidName, extractValidNames, extractPotentialNamesFromHTML } from "../../../engines/utils/nameExtractor"
+import { isValidName, extractValidNames, extractPotentialNamesFromHTML } from "@/engines/utils/nameExtractor"
 
 
 describe("nameExtractor.ts", () => {

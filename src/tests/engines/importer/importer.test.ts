@@ -3,8 +3,8 @@
 import fs from "fs";
 import path from "path";
 import os from "os";
-import { ConfigManager } from "../../../config";
-import { Importer } from "../../../engines/importer/importer";
+import { ConfigManager } from "@/config";
+import { Importer } from "@/engines/importer/importer";
 
 // 👇 Definim un mock extern reutilitzable
 const insertBatchMock = jest.fn(async (names: string[], meta: any) => names.length);

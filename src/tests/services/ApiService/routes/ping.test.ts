@@ -1,6 +1,6 @@
 // src/tests/services/ApiService/routes/ping.test.ts
 import { testClient } from "hono/testing"
-import server from "../../../../server"
+import server from "@/server"
 
 describe("API /ping route", () => {
   const client:any = testClient(server)

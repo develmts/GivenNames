@@ -1,5 +1,5 @@
 // src/services/ApiService/middleware/logging.ts
-import Logger from "../../../utils/logger"
+import Logger from "@/utils/logger"
 
 const httpLog = Logger.get().child("http")
 

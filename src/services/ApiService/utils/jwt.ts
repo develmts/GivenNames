@@ -2,7 +2,7 @@
 // JWT utilities: sign and verify tokens (access & refresh)
 
 import { sign, verify } from 'hono/jwt'
-import { TokenPayload } from "../types/authService"
+import { TokenPayload } from "@/services/ApiService/types/authService"
 
 const ACCESS_TOKEN_TTL = 60 * 15 // 15 minutes
 const REFRESH_TOKEN_TTL = 60 * 60 * 24 * 7 // 7 days

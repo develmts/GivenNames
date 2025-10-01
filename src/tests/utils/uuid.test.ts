@@ -1,4 +1,4 @@
-import { uuid, shortUUID } from "../../utils/uuid"
+import { uuid, shortUUID } from "@/utils/uuid"
 
 describe("uuid.ts", () => {
   describe("uuid()", () => {

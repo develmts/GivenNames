@@ -2,7 +2,7 @@
 // Middleware for authentication and RBAC role checks
 
 import type { Context, Next } from 'hono'
-import { verifyAccessToken } from '../utils/jwt'
+import { verifyAccessToken } from '@/services/ApiService/utils/jwt'
 
 // Require a valid access token
 export function requireAuth() {

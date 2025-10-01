@@ -1,10 +1,10 @@
 // Versio 4
 // src/v4/engines/WikipediaCrawler.ts
-import { CrawlerBase } from "./CrawlerBase";
-import { extractPotentialNamesFromHTML } from "../utils/nameExtractor";
-import { inferGenderFromNameList } from "../utils/genderInference";
-import { slugify } from "../../utils/slug";
-import Logger from "../../utils/logger";
+import { CrawlerBase } from "@/engines/crawler/CrawlerBase";
+import { extractPotentialNamesFromHTML } from "@/engines/utils/nameExtractor";
+import { inferGenderFromNameList } from "@/engines/utils/genderInference";
+import { slugify } from "@/utils/slug";
+import Logger from "@/utils/logger";
 import fs from "fs";
 import path from "path";
 

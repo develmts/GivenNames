@@ -1,7 +1,7 @@
 // nameExtractor.ts — versió 5
 
 // import { NEGATIVE_WORDS } from './non-names';
-import { NOT_NAMES_UI, NOT_NAMES_LANGS, NOT_NAMES,isBlacklisted } from "./not-names";
+import { NOT_NAMES_UI, NOT_NAMES_LANGS, NOT_NAMES,isBlacklisted } from "@/engines/utils/not-names";
 
 export interface ExtractOptions {
   verbose?: boolean;

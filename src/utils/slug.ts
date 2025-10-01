@@ -1,7 +1,7 @@
 // Versio 4
 
 // src/v4/utils/slug.ts
-import { shortUUID } from "./uuid";
+import { shortUUID } from "@/utils/uuid";
 
 type SlugOpts = {
   mode?: "filename" | "url";

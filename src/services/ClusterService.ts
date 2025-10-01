@@ -1,9 +1,9 @@
 //Version 4
 // ClusterService.ts
-import { GivenNamesORM } from "../orm/GivenNamesORM";
-import Logger from "../utils/logger";
-import { VariantCandidate } from "./VariantService";
-import { TranslationCandidate } from "./TranslationService";
+import { GivenNamesORM } from "@/orm/GivenNamesORM";
+import Logger from "@/utils/logger";
+import { VariantCandidate } from "@/services/VariantService";
+import { TranslationCandidate } from "@/services/TranslationService";
 
 const logger = Logger.get();
 

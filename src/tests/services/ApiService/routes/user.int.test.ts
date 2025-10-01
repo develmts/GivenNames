@@ -1,4 +1,4 @@
-import { server } from "../../../server"
+import { server } from "@/tests/server"
 import request from "supertest"
 
 describe("routesUsers (integration)", () => {

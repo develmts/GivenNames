@@ -2,8 +2,8 @@
 // Business logic layer for Users
 // Acts as the *only* entry point to UsersORM
 
-import { UsersORM, UserRow, UserWithRoles} from "../orm/UsersORM"
-import { hashPassword, verifyPassword } from  "./ApiService/utils/pwdUtils"    
+import { UsersORM, UserRow, UserWithRoles} from "@/orm/UsersORM"
+import { hashPassword, verifyPassword } from  "@/services/ApiService/utils/pwdUtils"    
 
 
 export type SafeUser = Omit<UserRow, "passwordHash">

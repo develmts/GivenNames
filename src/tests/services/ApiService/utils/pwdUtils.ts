@@ -1,5 +1,5 @@
 // src/tests/utils/passwords.test.ts
-import { hashPassword, verifyPassword } from "../../../../services/ApiService/utils/pwdUtils"
+import { hashPassword, verifyPassword } from "@/services/ApiService/utils/pwdUtils"
 
 const SKIP_DB_TESTS = false // killswitch per consistència, aquí no cal DB
 

@@ -11,7 +11,7 @@ import {
   verifyRefreshToken,
   decodeAccessToken,
   decodeRefreshToken,
-} from "../../../../services/ApiService/utils/jwt";
+} from "@/services/ApiService/utils/jwt";
 
 import { sign, verify } from "hono/jwt";
 

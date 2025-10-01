@@ -1,10 +1,10 @@
 // Version 4 
 // NameService.ts
-import { GivenNamesORM } from "../orm/GivenNamesORM";
-import { VariantService } from "./VariantService";
-import { TranslationService } from "./TranslationService";
-import { ClusterService } from "./ClusterService";
-import Logger from "../utils/logger";
+import { GivenNamesORM } from "@/orm/GivenNamesORM";
+import { VariantService } from "@/services/VariantService";
+import { TranslationService } from "@/services/TranslationService";
+import { ClusterService } from "@/services/ClusterService";
+import Logger from "@/utils/logger";
 
 const logger = Logger.get();
 

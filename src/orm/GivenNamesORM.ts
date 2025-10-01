@@ -3,7 +3,7 @@
 // ORM for Given Names database (SQLite)
 
 import Database from "better-sqlite3";
-import Logger from "../utils/logger";
+import Logger from "@/utils/logger";
 
 const logger = Logger.get();
 

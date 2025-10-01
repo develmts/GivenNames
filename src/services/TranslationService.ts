@@ -1,7 +1,7 @@
 // Versio 4
 // TranslationService.ts
-import { GivenNamesORM } from "../orm/GivenNamesORM";
-import Logger from "../utils/logger";
+import { GivenNamesORM } from "@/orm/GivenNamesORM";
+import Logger from "@/utils/logger";
 
 const logger = Logger.get();
 

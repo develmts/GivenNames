@@ -4,7 +4,7 @@ import {
   NOT_NAMES_LANGS,
   NOT_NAMES,
   isBlacklisted,
-} from "../../../engines/utils/not-names"
+} from "@/engines/utils/not-names"
 
 describe("not-names.ts", () => {
   test("lists should contain expected entries", () => {

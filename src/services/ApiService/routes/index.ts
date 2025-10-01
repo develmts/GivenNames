@@ -4,10 +4,10 @@
 import { Hono } from 'hono'
 
 // Import route modules (to be implemented in this folder)
-import { authRoutes } from './auth'
-import { nameRoutes } from './names'
-import { userRoutes } from './users'
-import { routesPing } from "./ping"
+import { authRoutes } from '@/services/ApiService/routes/auth'
+import { nameRoutes } from '@/services/ApiService/routes/names'
+import { userRoutes } from '@/services/ApiService/routes/users'
+import { routesPing } from "@/services/ApiService/routes/ping"
 
 
 // Create a router instance

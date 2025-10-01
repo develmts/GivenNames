@@ -1,10 +1,10 @@
 
 // Versio 4
 // import { GivenNamesORM } from "../db/GivenNamesORM";
-import Logger from "../utils/logger";
-import { VariantService } from "./VariantService";
-import { TranslationService } from "./TranslationService";
-import { ClusterService } from "./ClusterService";
+import Logger from "@/utils/logger";
+import { VariantService } from "@/services/VariantService";
+import { TranslationService } from "@/services/TranslationService";
+import { ClusterService } from "@/services/ClusterService";
 
 const logger = Logger.get();
 

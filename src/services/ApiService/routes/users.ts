@@ -8,13 +8,13 @@ import {
   UpdatePasswordResponse, 
   PatchUserRequest, 
   PatchUserResponse 
-} from '../types/users'
+} from '@/services/ApiService/types/users'
 
 import { Hono } from 'hono'
-import { requireAuth } from '../middleware/auth'
-import { UserService } from '../../UserService'
-import { AuthService } from '../AuthService'
-import {makeError } from "../utils/httpErrors"
+import { requireAuth } from '@/services/ApiService/middleware/auth'
+import { UserService } from '@/services/UserService'
+import { AuthService } from '@/services/ApiService/AuthService'
+import {makeError } from "@/services/ApiService/utils/httpErrors"
 
 export const userRoutes = new Hono()
 

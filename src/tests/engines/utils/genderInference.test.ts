@@ -5,7 +5,7 @@ import {
   inferGenderFromNameList,
   inferGenderFromMetadata,
   GenderResult
-} from  "../../../engines/utils/genderInference"
+} from  "@/engines/utils/genderInference"
 //"../../../utils/genderInference"
 
 describe("genderInference", () => {

@@ -2,9 +2,9 @@
 import Database from "better-sqlite3"
 import path from "path"
 import fs from "fs"
-import { ConfigManager } from "../config"
+import { ConfigManager } from "@/config"
 
-import Logger from "../utils/logger"
+import Logger from "@/utils/logger"
 
 const logger = Logger.get()
 

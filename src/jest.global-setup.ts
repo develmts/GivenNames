@@ -1,6 +1,6 @@
 // jest.global-setup.ts
 import path from "path";
-import { ConfigManager } from "./config";
+import { ConfigManager } from "@/config";
 
 export default async function globalSetup() {
   // 1. Root path del projecte

@@ -5,11 +5,11 @@
 // - Logout does not revoke refresh token (per requirements)
 
 import { Hono } from 'hono'
-import { LoginRequest, LoginResponse, RefreshResponse, LogoutResponse } from '../types/auth'
+import { LoginRequest, LoginResponse, RefreshResponse, LogoutResponse } from '@/services/ApiService/types/auth'
 import { getCookie,deleteCookie } from "hono/cookie"
-import { setRefreshTokenCookie } from "../utils/cookies"
-import { AuthService } from "../AuthService"  
-import { makeError } from '../utils/httpErrors'
+import { setRefreshTokenCookie } from "@/services/ApiService/utils/cookies"
+import { AuthService } from "@/services/ApiService/AuthService"  
+import { makeError } from '@/services/ApiService/utils/httpErrors'
 
 export const authRoutes = new Hono()
 

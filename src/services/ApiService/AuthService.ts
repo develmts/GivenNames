@@ -1,13 +1,13 @@
 import jwt from "jsonwebtoken"
-import { UserService } from "../UserService"
-import { makeError } from "./utils/httpErrors"
+import { UserService } from "@/services/UserService"
+import { makeError } from "@/services/ApiService/utils/httpErrors"
 // import { verifyPassword } from "./utils/pwdUtils"
 import { Context } from "hono"
 
 
-import { LoginResult, RefreshResult, TokenPayload } from "./types/authService"
+import { LoginResult, RefreshResult, TokenPayload } from "@/services/ApiService/types/authService"
 // import {HTTPException, AppException } from "../../exceptions"
-import * as Ex from "../../exceptions"
+import * as Ex from "@/exceptions"
 
 const ACCESS_TOKEN_TTL = process.env.ACCESS_TOKEN_TTL || "15m"
 const REFRESH_TOKEN_TTL = process.env.REFRESH_TOKEN_TTL || "7d"

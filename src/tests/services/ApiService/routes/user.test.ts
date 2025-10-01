@@ -2,10 +2,10 @@
 process.env.JWT_ACCESS_SECRET = "access_secret"
 process.env.JWT_REFRESH_SECRET = "refresh_secret"
 
-import server from "../../../../server"
-import { UserService } from "../../../../services/UserService"
-import { AuthService } from "../../../../services/ApiService/AuthService"
-import { signAccessToken } from "../../../../services/ApiService/utils/jwt"
+import server from "@/server"
+import { UserService } from "@/services/UserService"
+import { AuthService } from "@/services/ApiService/AuthService"
+import { signAccessToken } from "@/services/ApiService/utils/jwt"
 
 
 describe("User routes", () => {

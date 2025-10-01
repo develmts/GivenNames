@@ -17,8 +17,8 @@
 
 
 import { Context, Next } from "hono"
-import { AppException, HTTPException, InternalServerErrorException } from "../../../exceptions"
-import Logger from "../../../utils/logger"
+import { AppException, HTTPException, InternalServerErrorException } from "@/exceptions"
+import Logger from "@/utils/logger"
 
 const log = Logger.get().child("error")
 

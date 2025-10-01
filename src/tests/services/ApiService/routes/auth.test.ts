@@ -1,5 +1,5 @@
 // src/tests/services/ApiService/routes/auth.test.ts
-import server from "../../../../server"
+import server from "@/server"
 
 // mock d'AuthService
 jest.mock("../../../../services/ApiService/AuthService", () => ({

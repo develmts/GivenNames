@@ -1,5 +1,5 @@
-import { ConfigManager } from "../../config";
-import Logger from "../../utils/logger";
+import { ConfigManager } from "@/config";
+import Logger from "@/utils/logger";
 
 describe("Logger", () => {
   beforeAll(() => {

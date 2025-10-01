@@ -1,14 +1,14 @@
 // src/tests/users/UserService.test.ts
-import { ConfigManager } from "../../config";
-import { setupTestDb } from "../helpers/setupTestDb";
+import { ConfigManager } from "@/config";
+import { setupTestDb } from "@/tests/helpers/setupTestDb";
 
 import path from "path";
 import os from "os";
 
-import { UsersORM } from "../../orm/UsersORM";
+import { UsersORM } from "@/orm/UsersORM";
 
 // --- MOCK password utils ---
-import * as pwUtils from "../../services/ApiService/utils/pwdUtils"
+import * as pwUtils from "@/services/ApiService/utils/pwdUtils"
 jest.spyOn(pwUtils, "hashPassword").mockImplementation(async (pw) => `$mocked-${pw}`)
 jest.spyOn(pwUtils, "verifyPassword").mockImplementation(async (pw, hash) => hash === `$mocked-${pw}`)
 
@@ -31,7 +31,7 @@ beforeAll(() => {
   UsersORM.reconnect(testDb.db);
 
   // 4. Importem UserService dinàmicament
-  return import("../../services/UserService").then(mod => {
+  return import("@/services/UserService").then(mod => {
     UserService = mod.UserService;
   });
 });

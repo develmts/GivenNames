@@ -1,4 +1,4 @@
-import { errorHandler } from "../../../../services/ApiService/middleware/errorHandler"
+import { errorHandler } from "@/services/ApiService/middleware/errorHandler"
 console.log(errorHandler)
 describe("errorHandler middleware", () => {
   it("should handle thrown errors", async () => {

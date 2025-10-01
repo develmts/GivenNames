@@ -1,5 +1,5 @@
 import { App } from "supertest/types"
-import server  from "../../../server"
+import server  from "@/tests/server"
 import request from "supertest"
 
 describe("routesAuth (integration)", () => {

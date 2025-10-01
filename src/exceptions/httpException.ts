@@ -1,5 +1,5 @@
 // src/exceptions/httpException.ts
-import { AppException } from "./appException"
+import { AppException } from "@/exceptions/appException"
 
 /**
  * Base HTTP Exception — maps to an HTTP status code.

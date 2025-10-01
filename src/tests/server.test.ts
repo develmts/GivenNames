@@ -1,8 +1,8 @@
 // src/tests/server/server.test.ts
-import { ConfigManager } from "../config";
+import { ConfigManager } from "@/config";
 const cfg = ConfigManager.config(process.cwd())
 
-import server from "../server"
+import server from "@/server"
 import { Hono } from "hono"
 
 describe("Server smoke tests", () => {

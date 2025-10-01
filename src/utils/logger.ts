@@ -2,7 +2,7 @@
 // Singleton Logger
 // Added child(tag) factory for tagged loggers
 
-import { AppConfig } from "../config";
+import { AppConfig } from "@/config";
 
 export default class Logger {
   private static instance : Logger | undefined = undefined

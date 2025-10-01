@@ -1,7 +1,7 @@
 // ./src/server.ts
 // Application module for GivenNames V5 API Server
 // Uses Hono framework, prepared for JWT + refresh token and RBAC
-import { ConfigManager } from './config'
+import { ConfigManager } from '@/config'
 const cfg = ConfigManager.config(process.cwd())
 
 
@@ -11,11 +11,11 @@ import { cors } from 'hono/cors'
 import { prettyJSON } from 'hono/pretty-json'
 
 // Import routes from ApiService (to be implemented)
-import { apiRoutes } from './services/ApiService/routes'
+import { apiRoutes } from '@/services/ApiService/routes'
 // IMport http logging middleware
-import { requestLogger } from './services/ApiService/middleware/reqLogger'
+import { requestLogger } from '@/services/ApiService/middleware/reqLogger'
 // Import error handling middleware
-import { errorHandler } from './services/ApiService/middleware/errorHandler'
+import { errorHandler } from '@/services/ApiService/middleware/errorHandler'
 
 // Main application instance
 const server: Hono = new Hono()

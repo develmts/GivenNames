@@ -1,5 +1,5 @@
 // src/tests/services/ApiService/utils/cookies.test.ts
-import { setRefreshTokenCookie } from "../../../../services/ApiService/utils/cookies"
+import { setRefreshTokenCookie } from "@/services/ApiService/utils/cookies"
 
 // Mock explícit del mòdul hono/cookie
 jest.mock("hono/cookie", () => ({

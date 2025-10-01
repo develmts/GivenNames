@@ -1,4 +1,4 @@
-import { ConfigManager } from "../../config";
+import { ConfigManager } from "@/config";
 import os from "os"
 import path from "path";
 const cfg = ConfigManager.config(process.cwd())
@@ -14,7 +14,7 @@ beforeAll(() => {
   // console.log(`Test DB path: ${cfg.db.file}`)
 
   // 2. Carreguem UserService dinàmicament
-  return import("../../services/UserService").then(mod => {
+  return import("@/services/UserService").then(mod => {
     UserService = mod.UserService
 
     // 3. Prepara DB temporal i reconnecta ORM

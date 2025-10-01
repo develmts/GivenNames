@@ -1,5 +1,5 @@
 // src/tests/services/ApiService/AuthService.test.ts
-import { ConfigManager } from "../../../config";
+import { ConfigManager } from "@/config";
 const cfg = ConfigManager.config(process.cwd())
 
 
@@ -50,8 +50,8 @@ process.env.ACCESS_TOKEN_SECRET = "access_secret"
 process.env.REFRESH_TOKEN_SECRET = "refresh_secret"
 
 import jwt from "jsonwebtoken"
-import { AuthService } from "../../../services/ApiService/AuthService"
-import { UserService } from "../../../services/UserService"
+import { AuthService } from "@/services/ApiService/AuthService"
+import { UserService } from "@/services/UserService"
 
 describe("AuthService", () => {
   const mockUser = {

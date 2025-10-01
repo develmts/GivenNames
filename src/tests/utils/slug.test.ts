@@ -1,4 +1,4 @@
-import { slugify, isWindowsSafeFilename } from  "../../utils/slug" 
+import { slugify, isWindowsSafeFilename } from  "@/utils/slug" 
 
 
 describe("slugify", () => {

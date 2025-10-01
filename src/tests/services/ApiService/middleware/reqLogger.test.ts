@@ -1,4 +1,4 @@
-import { requestLogger } from  "../../../../services/ApiService/middleware/reqLogger"
+import { requestLogger } from  "@/services/ApiService/middleware/reqLogger"
 // console.log(">>> test file loaded");
 describe("requestLogger middleware", () => {
   it("should log request info", async () => {
