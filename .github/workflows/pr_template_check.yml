@@ -1,0 +1,26 @@
+name: PR Template Check
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  check-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate PR body has required sections
+        shell: bash
+        run: |
+          body="${{ github.event.pull_request.body }}"
+          required=("## Summary" "## Scope" "## Impact" "## Verification" "## Routes/Imports")
+          missing=0
+          for key in "${required[@]}"; do
+            if ! printf "%s" "$body" | grep -Fq "$key"; then
+              echo "Missing section: $key"
+              missing=1
+            fi
+          done
+          if [ $missing -ne 0 ]; then
+            echo "PR template validation failed."
+            exit 1
+          fi
+          echo "PR template validation passed."
