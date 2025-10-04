@@ -12,6 +12,9 @@ Describe the change and why it’s needed in 1–3 sentences.
 - [ ] Requires data migration or reindexing
 - [ ] Requires new or changed environment variables
 
+## Conventions
+- [ ] Code follows **English-only** in identifiers and comments.
+
 ## Verification
 - [ ] I ran `npm test` successfully
 - [ ] I manually tested the affected flow (describe steps):

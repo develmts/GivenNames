@@ -17,6 +17,11 @@ Thank you for contributing.
 - Use clear, action-oriented messages.
 - Example prefixes: `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`.
 
+## Language conventions
+- Code must be **English-only**: identifiers (variables, functions, classes, files) and **comments** in English.
+- User-facing copy or docs may be multilingual, but never inside source code.
+- If in doubt, prefer concise technical English in code.
+
 ## Coding Guidelines
 - TypeScript preferred for new modules.
 - Keep functions cohesive and small; avoid unnecessary coupling.
