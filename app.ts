@@ -1,56 +1,63 @@
 /**
- * App dispatcher (antic index.ts de v5)
+ * App dispatcher (antic index.ts de versio 5)
  * - No parseja argv (ja ho fa config.ts)
  * - Rep un AppConfig amb rootPath fixat
  */
-import { AppConfig, ConfigManager } from "./src/v5/config";
-import Logger from "./src/v5/utils/logger";
-import { Crawler } from "./src/v5/oldcrawler";
-import { Importer } from "./src/v5/engines/importer/importer";
-import { GivenNamesORM } from "./src/v5/orm/GivenNamesORM";
-import {semImport } from "./src/v5/engines/utils/importSemantic"
+import { AppConfig, ConfigManager } from "@/config";
+
+import Logger from "@/utils/logger";
+const logger = Logger.get()
+
+import { WikipediaCrawler as Crawler} from "@/engines/crawler/WikipediaCrawler"  //oldcrawler";
+import { Importer } from "@/engines/importer/importer";
+import { GivenNamesORM } from "@/orm/GivenNamesORM";
+import { semImport } from "@/engines/utils/importSemantic"
 
 import { createHttpTerminator, HttpTerminator } from "http-terminator"
 import { readFileSync } from "fs";
+import { server } from "@/server";
 
 // Estableix rootPath (només la 1a vegada)
 const config = ConfigManager.config(process.cwd())
+
 const orm = GivenNamesORM.connect(config.db.file);
 let terminator: HttpTerminator | null = null
+let isShuttingDown: boolean = false
 
 // Handler global → accessible sempre
 const shutdown = async () => {
-  const logger = Logger.get()
+  if (isShuttingDown) return;
+  isShuttingDown = true;
   logger.info("Shutting down gracefully...")
 
   try {
-    if (terminator) {
-      await terminator.terminate()
-      logger.info("HTTP server terminated")
-    }
-    orm.close()
-    logger.info("ORM connection closed")
-  } catch (err) {
-    logger.error("Error during shutdown", err)
+    // if (terminator) {
+    //   await terminator.terminate().catch((e) => logger.warn(`HTTP terminator Error ${e.toString()}`))
+    //   logger.info("HTTP server terminated")
+    // }
+    await server.shutdown()
+    await orm.close()
+    logger.info("All critical resources closed")
+  }catch(err){
+    logger.error("Error during app shutdown", err)
   } finally {
     process.exit(0)
   }
+  
 }
-
 
 // Handlers globals → out of main()
 process.on("SIGINT", shutdown)
 process.on("SIGTERM", shutdown)
 
-
 process.on("uncaughtException", (err) => {
   Logger.get().error("Uncaught Exception", err);
-  process.exitCode = 1;
+  void shutdown()
 });
 
 process.on("unhandledRejection", (reason) => {
   Logger.get().error("Unhandled Rejection", reason);
-  process.exitCode = 1;
+  void shutdown()
 });
 
 export async function main() {
@@ -81,28 +88,37 @@ export async function main() {
       break;
     case "start":
       //Start API Server
-      console.log("Starting GivenNames API server...");
-      const { serve } = await import("@hono/node-server")
-      const serverModule = await import("./src/v5/server")
+      // console.log("Starting GivenNames API server...");
+      await server.run()
+      // const { serve } = await import("@hono/node-server")
+      // const serverModule = await import("@/server")
 
-      const port = config.server.port || 3000
-      let  httpServer  //= serve({ fetch: serverModule.default.fetch, port })
-      if (config.server.useTLS) {
-        httpServer = serve({
-          fetch: serverModule.default.fetch,
-          port,
-          tls: {
-            key: readFileSync(config.server.tlsKey!),
-            cert: readFileSync(config.server.tlsCert!)
-          },
-        } as any)
-        logger.info(`HTTPS server listening on https://localhost:${port}`)
-      } else {
-        httpServer = serve({ fetch: serverModule.default.fetch, port })
-        logger.info(`HTTP server listening on http://localhost:${port}`)
-      }
+      // const port = config.server.port || 3000
 
-      terminator = createHttpTerminator({ server: httpServer })
+      // const tempRT = (true as false) || serve({fetch:null, port :0} )
+      // type serveReturnType = typeof tempRT
+
+      // let httpServer:serveReturnType  //= serve({ fetch: serverModule.default.fetch, port })
+
+      // if (config.server.useTLS) {
+      //   if (!config.server.tlsKey || !config.server.tlsCert) {
+      //     throw new Error("TLS enabled but missing tlsKey/tlsCert in config");
+      //   }        
+      //   httpServer = serve({
+      //     fetch: serverModule.default.fetch,
+      //     port,
+      //     tls: {
+      //       key: readFileSync(config.server.tlsKey!),
+      //       cert: readFileSync(config.server.tlsCert!)
+      //     },
+      //   } as any)
+      //   logger.info(`HTTPS server listening on https://localhost:${port}`)
+      // } else {
+      //   httpServer = serve({ fetch: serverModule.default.fetch, port })
+      //   logger.info(`HTTP server listening on http://localhost:${port}`)
+      // }
+
+      // terminator = createHttpTerminator({ server: httpServer as any})
       break
     case "help":
     default:

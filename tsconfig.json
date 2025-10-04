@@ -16,9 +16,6 @@
   "include": [
     "*.ts",
     "src/**/*.ts",
-    "./v1/**/*.ts",
-    "./v2/**/*.ts",
-    "./v3/**/*.ts"
   ],
   "exclude": [
     "node_modules"

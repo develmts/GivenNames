@@ -2,50 +2,6 @@
 import { ConfigManager } from "@/config";
 const cfg = ConfigManager.config(process.cwd())
 
-
-// import { AuthService } from "../../../services/ApiService/AuthService"
-
-// describe("AuthService", () => {
-//   beforeAll(() => {
-
-//   })
-//   test("should generate tokens on login", async () => {
-//     const result = await AuthService.login("testuser", "password")
-//     expect(result).toHaveProperty("accessToken")
-//     expect(result).toHaveProperty("refreshToken")
-//   })
-
-//   test("should refresh tokens with valid refresh token", async () => {
-//     const login = await AuthService.login("testuser", "password")
-//     const refreshed = await AuthService.refresh(login.refreshToken)
-//     expect(refreshed).toHaveProperty("accessToken")
-//   })
-
-//   test("should return null for invalid refresh token", async () => {
-//     const result = await AuthService.refresh("invalid.token")
-//     expect(result).toBeNull()
-//   })
-
-//   test("should throw if login credentials are invalid", async () => {
-//     await expect(AuthService.login("wronguser", "wrongpass")).rejects.toThrow()
-//   })
-
-//   test("getCurrentUser should return null if no auth header", () => {
-//     const fakeContext: any = { req: { header: () => null } }
-//     const result = AuthService.getCurrentUser(fakeContext)
-//     expect(result).toBeNull()
-//   })
-
-//   test("getCurrentUser should parse valid bearer token", async () => {
-//     const { accessToken } = await AuthService.login("testuser", "password")
-//     const fakeContext: any = { req: { header: () => `Bearer ${accessToken}` } }
-//     const result = AuthService.getCurrentUser(fakeContext)
-//     expect(result).toHaveProperty("id")
-//     expect(result).toHaveProperty("roles")
-//   })
-// })
-
-// src/tests/services/ApiService/AuthService.test.ts
 process.env.ACCESS_TOKEN_SECRET = "access_secret"
 process.env.REFRESH_TOKEN_SECRET = "refresh_secret"
 

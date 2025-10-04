@@ -1,6 +1,5 @@
 // tests/services/VariantService.test.ts
-
-import { GivenNamesORM } from "../../../../src/orm/GivenNamesORM";
+import { GivenNamesORM } from  '@/orm/GivenNamesORM'
 import { VariantService } from '@/services/VariantService'
 
 jest.mock("../../../src/orm/GivenNamesORM"); // ORM Mock 

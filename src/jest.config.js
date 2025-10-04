@@ -4,7 +4,7 @@ module.exports = {
   testEnvironment: "node",
   roots: ["<rootDir>/src/tests"],
   testMatch: ["**/*.test.ts"],
-  //testMatch: ["**/src/tests/**/*.test.ts"], // només executa els tests de v5
+ 
   moduleFileExtensions: ["ts", "js", "json"],
   transform: {
     "^.+\\.ts$": "ts-jest"
@@ -19,7 +19,7 @@ module.exports = {
   // 👇 Coverage
   collectCoverage: true,
   collectCoverageFrom: [
-    "src/**/*.{ts,js}",   // tot el codi de V5
+    "src/**/*.{ts,js}",   // tot el codi
     "!src/tests/**",      // exclou els tests
     "!**/node_modules/**"
   ],

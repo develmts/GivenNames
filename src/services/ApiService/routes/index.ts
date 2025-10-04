@@ -1,5 +1,5 @@
 // ./src/services/ApiService/index.ts
-// Aggregates and mounts API routes for GivenNames V5
+// Aggregates and mounts API routes for GivenNames
 
 import { Hono } from 'hono'
 

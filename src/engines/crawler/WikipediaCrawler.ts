@@ -1,5 +1,6 @@
-// Versio 4
-// src/v4/engines/WikipediaCrawler.ts
+ // src/v4/engines/WikipediaCrawler.ts
+import { ConfigManager, AppConfig } from "@/config"
+
 import { CrawlerBase } from "@/engines/crawler/CrawlerBase";
 import { extractPotentialNamesFromHTML } from "@/engines/utils/nameExtractor";
 import { inferGenderFromNameList } from "@/engines/utils/genderInference";
@@ -24,7 +25,25 @@ interface PageMetadata {
  */
 export class WikipediaCrawler extends CrawlerBase {
   protected source = "wikipedia";
+  constructor() {
+    super()
+  }
 
+  static async runFromConfig(config: AppConfig): Promise<void> {
+    const crawler = new WikipediaCrawler();
+    
+    try {
+      await crawler.runFromCLI();
+    } finally {
+      // If the crawler/base provides a browser disposer, call it safely
+      crawler.disposeBrowser()
+      // const maybeDispose = (crawler as any).closeBrowser;
+      // if (typeof maybeDispose === "function") {
+      //   await maybeDispose.call(crawler);
+      // }
+    }
+  }
+  
   /**
    * Executa el crawler des de CLI segons la configuració.
    */
@@ -74,18 +93,31 @@ export class WikipediaCrawler extends CrawlerBase {
       this.config.crawler.headed || false
     );
 
-    const validNames = extractPotentialNamesFromHTML(document);
+    const candidates = extractPotentialNamesFromHTML(document);
+    const validNames = this.filterNames(candidates);
+    const metadata = this.buildMetadata(url,validNames)
 
-    // Inferim el gènere a partir dels noms si no ve del seed
-    const inferredGender = inferGenderFromNameList(validNames, "unknown").gender;
+    return { names: validNames, metadata };
+  }
 
-    const meta: PageMetadata = {
+  /**
+   * Pas 2: filtrar noms candidats (ara mateix només retorna els mateixos).
+   * Aquí s’hi poden afegir regles de llargada, caràcters, blacklist, etc.
+   */
+  protected filterNames(candidates: string[]): string[] {
+    return candidates;
+  }  
+  /**
+   * Pas 3: construir objecte de metadades coherent.
+   */
+  protected buildMetadata(url: string, names: string[]): PageMetadata {
+    const inferredGender = inferGenderFromNameList(names, "unknown").gender;
+    return {
       locale: this.config.locale || "unknown",
       gender: inferredGender,
       source_url: url,
       source_slug: slugify(url),
     };
-
-    return { names: validNames, metadata: meta };
   }
+  
 }

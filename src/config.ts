@@ -1,9 +1,6 @@
-
-// Versio 5
-
 // src/v4/config.ts
 /**
- * Global configuration for GivenNames V5
+ * Global configuration for GivenNames
  * - Sources: CLI (--flag), .env, defaults
  * - Priority: CLI > ENV > defaults
  * - Exports immutable `config`

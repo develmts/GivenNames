@@ -13,7 +13,7 @@ describe("Server smoke tests", () => {
   //   const body = await res.json()
   //   expect(body).toMatchObject({
   //     status: "ok",
-  //     message: expect.stringContaining("GivenNames V5 API Server"),
+  //     message: expect.stringContaining("GivenNames API Server"),
   //   })
   // })
 

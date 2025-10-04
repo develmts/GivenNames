@@ -1,7 +1,4 @@
-// import {AppConfig } from "../v4/config";
-// import { Appconfig } from  "../../config"    //"./v4/config";
 import { ConfigManager } from "@/config";
-
 
 describe("ConfigManager", () => {
   test("should throw if called without rootPath on first call", () => {

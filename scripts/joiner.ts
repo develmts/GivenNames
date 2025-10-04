@@ -1,4 +1,25 @@
-// join json semantic seeds in onefiled
+/**
+ * joiner.ts
+ * ----------
+ * Utility script for development only.
+ *
+ * Purpose:
+ *   - Joins all JSON files from `data/semantic/` into a single aggregated JSON.
+ *   - Intended to provide a temporary dataset for testing SPARQL and semantic clusters.
+ *
+ * Notes:
+ *   - Not part of the production codebase (should not be imported by src/).
+ *   - Safe to keep under `scripts/` for reference or ad-hoc usage.
+ *   - Input directory: `data/semantic/`
+ *   - Output: a single JSON file (joined content), printed to stdout or written to file.
+ *
+ * Usage:
+ *   npx ts-node scripts/joiner.ts > data/fixtures/joined-semantic.json
+ *
+ * Status:
+ *   Legacy/dev utility. Kept “just in case”, not maintained as part of the main toolchain.
+ */
+
 import fs from "fs";
 import path from "path";  
 
@@ -11,7 +32,7 @@ const dryrun = false
 
 // a small helper func
 function aRnd(arr:any[], howmany:number=1) {
-  const aRes= []
+  const aRes: any[]= []
   for (let i=0 ; i < howmany; i++){
     aRes.push(arr[Math.floor(Math.random() * arr.length)])
   }
@@ -49,7 +70,6 @@ function saveDict(data: Record<string,any>){
 
 }
 
-
 function jsonDict(){
   console.log(`[joiner] Reading .json files from ${jsonPath}`);
   console.log(`[joiner] Output file: ${outJson}`);
@@ -78,7 +98,6 @@ function jsonDict(){
       saveDict(crudeDict)
   } 
 }
-
 
 function importFile(filePath:string): string[]{
   let seeds  : string[] = []

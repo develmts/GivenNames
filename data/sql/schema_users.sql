@@ -1,5 +1,5 @@
 -- ==========================================
--- Users database schema for GivenNames V5
+-- Users database schema for GivenNames
 -- Compatible with better-sqlite3
 -- ==========================================
 

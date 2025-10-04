@@ -1,6 +1,6 @@
-# Jest Tests for v5
+# Jest Tests for GivenNames
 
-This folder contains **unit and integration tests** for the v5 modules, written with [Jest](https://jestjs.io/) and [supertest](https://github.com/visionmedia/supertest).
+This folder contains **unit and integration tests** for the GivenNames modules, written with [Jest](https://jestjs.io/) and [supertest](https://github.com/visionmedia/supertest).
 
 ## 📂 Structure
 
