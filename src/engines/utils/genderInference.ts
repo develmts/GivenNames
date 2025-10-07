@@ -1,7 +1,7 @@
 
 // Versio 5
 
-import { GENDER_TERMS_BY_LOCALE } from '@/engines/utils/genderTerms';
+import { GENDER_TERMS_BY_LOCALE } from '@/engines/utils/genderTerms.js';
 
 export type Gender = 'male' | 'female' | 'neutral' | 'unknown';
 

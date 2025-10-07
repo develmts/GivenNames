@@ -5,11 +5,11 @@
 import fs from "fs";
 import path from "path";
 import readline from "readline";
-import {AppConfig, ConfigManager } from "@/config";
+import {AppConfig, ConfigManager } from "@/config.js";
 // import { GivenNamesORM } from "./db/GivenNamesORM";
-import { NameService } from "@/services/NameService";
+import { NameService } from "@/services/NameService.js";
 
-import Logger from "@/utils/logger";
+import Logger from "@/utils/logger.js";
 
 const logger = Logger.get()
 

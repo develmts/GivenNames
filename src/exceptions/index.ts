@@ -1,3 +1,3 @@
 // src/exceptions/index.ts
-export * from "./appException"
-export * from "./httpException"
+export * from "./appException.js"
+export * from "./httpException.js"

@@ -1,4 +1,4 @@
-import { ConfigManager } from "@/config";
+import { ConfigManager } from "@/config.js";
 import os from "os"
 import path from "path";
 const cfg = ConfigManager.config(process.cwd())

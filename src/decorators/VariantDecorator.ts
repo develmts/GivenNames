@@ -4,7 +4,7 @@ import {
   PersistedRelations,
   BaseCandidate,
   DecoratorMeta,
-} from "@/decorators/AbstractDecorator";
+} from "@/decorators/AbstractDecorator.js";
 
 // 🔹 Tipus específic per variants
 export interface VariantCandidate extends BaseCandidate {

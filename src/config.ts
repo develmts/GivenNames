@@ -1,4 +1,4 @@
-// src/v4/config.ts
+// src/config.ts
 /**
  * Global configuration for GivenNames
  * - Sources: CLI (--flag), .env, defaults
@@ -10,9 +10,11 @@ import minimist from "minimist";
 import dotenv from "dotenv";
 import path from "path";
 
-dotenv.config({quiet:true});
-const argv = minimist(process.argv.slice(2));
 
+dotenv.config({quiet:true});
+
+const argv = minimist(process.argv.slice(2));
+console.log()
 // Helpers
 const asBool = (v: any, fb: boolean) =>
   v === undefined || v === null ? fb :
@@ -31,6 +33,9 @@ export interface ServerConfig {
   useTLS: boolean
   tlsKey?: string
   tlsCert?: string
+    
+  jwtAccessSecret?: string
+  jwtRefreshSecret?: string
 }
 
 export interface AppConfig {
@@ -104,7 +109,7 @@ const defaults = {
     sql: "data/sql/",
   },
 
-  seedsFile: null as string | null,
+  seedsFile: "default.txt",
   sparql: {
     rateLimitMs:  1000, // 👈 per CLI --rateLimit=2000
   },
@@ -136,6 +141,18 @@ const defaults = {
     enabled: false,
     method: "embeddings" as const,
   },
+
+  server: {
+    port: 3000,
+    useTLS: true,
+    tlsKey: "",  //process.env.TLS_KEY,
+    tlsCert: "", //process.env.TLS_CERT,
+
+    // 👇 Injecta les claus JWT des de l'entorn o des de defaults
+    jwtAccessSecret: undefined,
+    jwtRefreshSecret: undefined
+  },
+
 };
 
 // Root path “latched” la primera vegada
@@ -223,10 +240,13 @@ function buildConfig(rootPath: string): AppConfig {
     },
 
     server: {
-      port: parseInt(process.env.API_PORT || "3000", 10),
-      useTLS: process.env.USE_TLS === "true",
+      port: parseInt(process.env.API_PORT,10) || defaults.server.port ,
+      useTLS: asBool(process.env.USE_TLS, defaults.server.useTLS),
       tlsKey: process.env.TLS_KEY,
-      tlsCert: process.env.TLS_CERT
+      tlsCert: process.env.TLS_CERT,
+
+      jwtAccessSecret: process.env.JWT_ACCESS_SECRET,  // throw new Error("No JWT Credentials defined") ,
+      jwtRefreshSecret: process.env.JWT_REFRESH_SECRET // throw new Error("No JWT Credentials defined") ,
     },
   };
 

@@ -135,7 +135,7 @@ async function main() {
     await project.save();
   }
 
-  // Optional: fix CommonJS require("...") patterns in .ts (if any)
+  // Optional: fix CommonJS require ("...") patterns in .ts (if any)
   for (const file of files) {
     const txt = fs.readFileSync(file, "utf8");
     let updated = txt;

@@ -3,19 +3,19 @@
  * - No parseja argv (ja ho fa config.ts)
  * - Rep un AppConfig amb rootPath fixat
  */
-import { AppConfig, ConfigManager } from "@/config";
+import { AppConfig, ConfigManager } from "@/config.js";
 
-import Logger from "@/utils/logger";
+import Logger from "@/utils/logger.js";
 const logger = Logger.get()
 
-import { WikipediaCrawler as Crawler} from "@/engines/crawler/WikipediaCrawler"  //oldcrawler";
-import { Importer } from "@/engines/importer/importer";
-import { GivenNamesORM } from "@/orm/GivenNamesORM";
-import { semImport } from "@/engines/utils/importSemantic"
+import { WikipediaCrawler as Crawler} from "@/engines/crawler/WikipediaCrawler.js"  //oldcrawler";
+import { Importer } from "@/engines/importer/importer.js";
+import { GivenNamesORM } from "@/orm/GivenNamesORM.js";
+import { semImport } from "@/engines/utils/importSemantic.js"
 
 import { createHttpTerminator, HttpTerminator } from "http-terminator"
 import { readFileSync } from "fs";
-import { server } from "@/server";
+import { server } from "@/server.js";
 
 // Estableix rootPath (només la 1a vegada)
 const config = ConfigManager.config(process.cwd())

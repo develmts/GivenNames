@@ -1,7 +1,7 @@
 // Version 4 
 // VariantService.ts
-import { GivenNamesORM } from "@/orm/GivenNamesORM";
-import Logger from "@/utils/logger";
+import { GivenNamesORM } from "@/orm/GivenNamesORM.js";
+import Logger from "@/utils/logger.js";
 
 const logger = Logger.get();
 

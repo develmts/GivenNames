@@ -1,8 +1,8 @@
 // src/v4/engines/CrawlerBase.ts
 import { chromium, Browser, Page } from "playwright";
 import { JSDOM } from "jsdom";
-import { EngineBase } from "@/engines/EngineBase";
-import Logger from "@/utils/logger";
+import { EngineBase } from "@/engines/EngineBase.js";
+import Logger from "@/utils/logger.js";
 
 const logger = Logger.get();
 

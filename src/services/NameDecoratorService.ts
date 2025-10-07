@@ -1,7 +1,7 @@
-import Logger from "@/utils/logger";
-import { VariantService } from "@/services/VariantService";
-import { TranslationService } from "@/services/TranslationService";
-import { ClusterService } from "@/services/ClusterService";
+import Logger from "@/utils/logger.js";
+import { VariantService } from "@/services/VariantService.js";
+import { TranslationService } from "@/services/TranslationService.js";
+import { ClusterService } from "@/services/ClusterService.js";
 
 const logger = Logger.get();
 

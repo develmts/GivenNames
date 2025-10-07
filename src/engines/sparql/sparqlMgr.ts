@@ -2,11 +2,11 @@
 // src/v4/engines/sparqlMgr.ts
 // import fetch from "node-fetch";
 import path from "path";
-import { EngineBase } from "@/engines/EngineBase";
-import { slugify } from "@/engines/utils/slug";
-import Logger from "@/engines/utils/logger";
+import { EngineBase } from "@/engines/EngineBase.js";
+import { slugify } from "@/engines/utils/slug.js";
+import Logger from "@/engines/utils/logger.js";
 
-import { basicNamesQuery, variantsQuery, translationsQuery } from "@/engines/sparql/sparqlQueries";
+import { basicNamesQuery, variantsQuery, translationsQuery } from "@/engines/sparql/sparqlQueries.js";
 
 const logger = Logger.get();
 

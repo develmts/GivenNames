@@ -1,10 +1,10 @@
 import {
   NameContext,
   PersistedRelations,
-} from "@/decorators/AbstractDecorator";
-import { VariantDecorator, VariantCandidate } from "@/decorators/VariantDecorator";
-import { TranslationDecorator, TranslationCandidate } from  "@/decorators/TranslationDecorator"
-import { ClusterDecorator, ClusterCandidate } from "@/decorators/ClusterDecorator";
+} from "@/decorators/AbstractDecorator.js";
+import { VariantDecorator, VariantCandidate } from "@/decorators/VariantDecorator.js";
+import { TranslationDecorator, TranslationCandidate } from  "@/decorators/TranslationDecorator.js"
+import { ClusterDecorator, ClusterCandidate } from "@/decorators/ClusterDecorator.js";
 
 export interface DecoratedResult {
   name: string;

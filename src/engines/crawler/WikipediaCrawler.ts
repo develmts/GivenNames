@@ -1,11 +1,11 @@
- // src/v4/engines/WikipediaCrawler.ts
-import { ConfigManager, AppConfig } from "@/config"
+ // src/engines/WikipediaCrawler.ts
+import { ConfigManager, AppConfig } from "@/config.js"
 
-import { CrawlerBase } from "@/engines/crawler/CrawlerBase";
-import { extractPotentialNamesFromHTML } from "@/engines/utils/nameExtractor";
-import { inferGenderFromNameList } from "@/engines/utils/genderInference";
-import { slugify } from "@/utils/slug";
-import Logger from "@/utils/logger";
+import { CrawlerBase } from "@/engines/crawler/CrawlerBase.js";
+import { extractPotentialNamesFromHTML } from "@/engines/utils/nameExtractor.js";
+import { inferGenderFromNameList } from "@/engines/utils/genderInference.js";
+import { slugify } from "@/utils/slug.js";
+import Logger from "@/utils/logger.js";
 import fs from "fs";
 import path from "path";
 
@@ -57,7 +57,7 @@ export class WikipediaCrawler extends CrawlerBase {
 
     const seedsPath = path.resolve(this.config.paths.seeds , seedsFile);
 
-    const content = require("fs").readFileSync(seedsPath, "utf-8");
+    const content = fs.readFileSync(seedsPath, "utf-8");
     const seeds = content.split("\n").filter(Boolean);
 
     const maxPages = this.config.crawler.maxPages || seeds.length;

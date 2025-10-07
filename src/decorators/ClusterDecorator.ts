@@ -4,7 +4,7 @@ import {
   PersistedRelations,
   BaseCandidate,
   DecoratorMeta,
-} from "@/decorators/AbstractDecorator";
+} from "@/decorators/AbstractDecorator.js";
 
 export interface ClusterCandidate extends BaseCandidate {
   label: string;

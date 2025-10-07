@@ -1,11 +1,12 @@
-// src/v4/engines/GenericCrawler.ts
+// src/engines/GenericCrawler.ts
+import { ConfigManager, AppConfig } from "@/config.js"
 import fs from "fs";
 import path from "path";
-import { CrawlerBase } from "@/engines/crawler/CrawlerBase";
-import { extractPotentialNamesFromHTML } from "@/engines/utils/nameExtractor";
-import { inferGenderFromNameList } from "@/engines/utils/genderInference";
-import { slugify } from "@/utils/slug";
-import Logger from "@/utils/logger";
+import { CrawlerBase } from "@/engines/crawler/CrawlerBase.js";
+import { extractPotentialNamesFromHTML } from "@/engines/utils/nameExtractor.js";
+import { inferGenderFromNameList } from "@/engines/utils/genderInference.js";
+import { slugify } from "@/utils/slug.js";
+import Logger from "@/utils/logger.js";
 
 const logger = Logger.get();
 
@@ -25,6 +26,17 @@ interface PageMetadata {
 export class GenericCrawler extends CrawlerBase {
   protected source = "generic";
 
+  static async runFromConfig(config: AppConfig): Promise<void> {
+    const crawler = new GenericCrawler();
+          
+    try {
+      await crawler.runFromCLI();
+    } finally {
+      // If the crawler/base provides a browser disposer, call it safely
+      crawler.disposeBrowser()
+    }
+  }
+
   async runFromCLI(): Promise<void> {
     const seedsFile = this.config.seedsFile ?? this.config.crawler.defSeed;
     const seedsPath = path.resolve(this.config.paths.seeds, seedsFile);
@@ -32,7 +44,7 @@ export class GenericCrawler extends CrawlerBase {
     if (!fs.existsSync(seedsPath)) {
       throw new Error(`[GenericCrawler] Seeds file not found: ${seedsPath}`);
     }
-
+    
     logger.info(`[GenericCrawler] Using seeds file: ${seedsPath}`);
     const content = fs.readFileSync(seedsPath, "utf-8");
     const seeds = content.split(/\r?\n/).map(s => s.trim()).filter(Boolean);

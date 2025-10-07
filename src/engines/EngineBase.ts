@@ -1,9 +1,9 @@
 // src/v4/engines/EngineBase.ts
 import fs from "fs";
 import path from "path";
-import { ConfigManager } from "@/config";
-import Logger from "@/utils/logger";
-import { slugify } from "@/utils/slug";
+import { ConfigManager } from "@/config.js";
+import Logger from "@/utils/logger.js";
+import { slugify } from "@/utils/slug.js";
 
 const logger = Logger.get();
 

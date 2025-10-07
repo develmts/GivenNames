@@ -8,15 +8,16 @@ import { logger as honoLogger } from 'hono/logger'
 import { cors } from 'hono/cors'
 import { prettyJSON } from 'hono/pretty-json'
 
-import { apiRoutes } from '@/services/ApiService/routes'
-import { requestLogger } from '@/services/ApiService/middleware/reqLogger'
-import { errorHandler } from '@/services/ApiService/middleware/errorHandler'
+import { apiRoutes } from '@/services/ApiService/routes/index.js'
+import { requestLogger } from '@/services/ApiService/middleware/reqLogger.js'
+import { errorHandler } from '@/services/ApiService/middleware/errorHandler.js'
 
 import { createHttpTerminator, HttpTerminator } from 'http-terminator'
 import { readFileSync } from 'fs'
-import Logger from '@/utils/logger'
-import { AppConfig, ConfigManager } from '@/config'
+import Logger from '@/utils/logger.js'
+import { AppConfig, ConfigManager } from '@/config.js'
 const logger = Logger.get()
+
 export class GivenNamesServer {
   public app: Hono
   private terminator: HttpTerminator | null = null
@@ -47,9 +48,9 @@ export class GivenNamesServer {
     this.app.use('*', prettyJSON())
 
     // Root route
-    this.app.get('/', (c) =>
-      c.json({ status: 'ok', message: 'GivenNames API Server' })
-    )
+    // this.app.get('/', (c) => {
+    //   return c.json({ status: 'ok', message: 'GivenNames API Server' })
+    // })
 
     // Mount API service routes under /api
     this.app.route('/api', apiRoutes)
